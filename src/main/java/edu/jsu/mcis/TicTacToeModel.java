@@ -74,7 +74,13 @@ public class TicTacToeModel {
         board = new Mark[width][width];
 
         /* Initialize board by filling every square with empty marks */
-        
+        for(int i = 0; i<this.getWidth(); i++){
+            
+            for(int j = 0; j<this.getWidth(); j++){
+                board[i][j]= Mark.EMPTY;
+            }
+        }
+
         // INSERT YOUR CODE HERE
         
     }
@@ -116,10 +122,10 @@ public class TicTacToeModel {
     public Mark getMark(int row, int col) {
         
         /* Return the mark from the square at the specified location */
-        
+        return this.board[row][col];
+
         // INSERT YOUR CODE HERE
 
-        return null; // remove this line later!
             
     }
 	
@@ -140,6 +146,12 @@ public class TicTacToeModel {
         /* Check the squares of the board to see if the specified mark is the
            winner */
         
+        for(int i = 0; i < this.getWidth(); i++){
+
+            for(int j = 0; j < this.getWidth(); j++){
+                
+            }
+        }
         // INSERT YOUR CODE HERE
 
         return false; // remove this line later!
@@ -186,7 +198,26 @@ public class TicTacToeModel {
         StringBuilder output = new StringBuilder("  ");
         
         /* Output the board contents as a string (see examples) */
+
         
+        
+        for (int i = 0; i < this.getWidth(); i++){
+            //system.out.print(i);
+            output.append(i);
+
+        }
+
+        output.append("\n\n");
+
+        for(int i = 0 ; i < this.getWidth(); i++){
+            output.append(i+" "); 
+
+            for (int j = 0; j < this.getWidth(); j++){
+            Mark aMark = this.getMark(i,j);
+            output.append(aMark.toString());
+            }
+            output.append("\n");
+        }
         // INSERT YOUR CODE HERE
         
         return output.toString();
