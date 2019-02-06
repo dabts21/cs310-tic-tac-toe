@@ -43,9 +43,22 @@ public class TicTacToeController {
         /* After the game is over, show the final board and the winner */
 
         view.showBoard(model.toString());
-        
+
         view.showResult(model.getResult().toString());
         
+    }
+
+    public String getMarkAsString(int row, int col) {        
+        return (model.getMark(row, col).toString());        
+    }
+    
+    public TicTacToeView getView() {        
+        return view;        
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent event) {
+        // INSERT YOUR CODE HERE
     }
 
 }
