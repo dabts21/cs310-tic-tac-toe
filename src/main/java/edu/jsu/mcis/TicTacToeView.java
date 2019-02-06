@@ -23,16 +23,27 @@ public class TicTacToeView {
 
            if(isXTurn){
                System.out.println("Player 1 (X) Move: ");
-               System.out.println("Enter the row and column numbers, seperated by a space: ");
+               System.out.print("Enter the row and column numbers, seperated by a space: ");
                
            }
             else{
                 System.out.println("Player 2 (O) Move: ");
-                System.out.println("Enter the row and column numbers, seperated by a space: ");
+                System.out.print("Enter the row and column numbers, seperated by a space: ");
             }
             String input = keyboard.nextLine();
             String[] parts = input.split(" ");
-            return new TicTacToeMove(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]));
+
+            int row = -1;
+            int col = -1;
+
+            try{
+                row = Integer.parseInt(parts[0]);
+                col = Integer.parseInt(parts[1]);
+            }
+            catch(Exception e){
+
+            }
+            return new TicTacToeMove(row, col);
             
 
 
